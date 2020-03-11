@@ -11,22 +11,31 @@
 </head>
 <body>
 <div>
-    <input type="checkbox" name="tick" id="check1" onclick="checkThisBox(this)"> Dog
+    <input type="checkbox" name="tick" id="check_1" onclick="checkThisBox(2)"> Dog
 </div>
 <div>
-    <input type="checkbox" name="tick" id="check2" onclick="checkThisBox(this)"> Cat
+    <input type="checkbox" name="tick" id="check_2" onclick="checkThisBox(1)"> Cat
 </div>
 <div>
-    <input type="checkbox" name="tick" id="check3" onclick="checkThisBox(this)"> Monkey
+    <input type="checkbox" name="tick" id="check_3" onclick="checkThisBox(2)"> Monkey
 </div>
 <script>
-    function checkThisBox(ckb) {
-        let check = document.getElementsByName(ckb.name);
-        for (let i = 0; i < check.length; i++){
-            check.checked = false;
-            if (ckb.checked) {
-                check.checked = true;
-            }
+    // function checkThisBox(ckb) {
+    //     let check = document.getElementsByName(ckb.name);
+    //     for (let i = 0; i < check.length; i++){
+    //         check.checked = false;
+    //         if (ckb.checked) {
+    //             check.checked = true;
+    //         }
+    //     } check.checked = true;
+    // }
+    let count = 0;
+    function checkThisBox(val) {
+        count++;
+        if (count>2) {
+            let idStr = "check_" + val;
+            document.getElementById(idStr).checked = false;
+            count--;
         }
     }
 </script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Nhập 2 giá trị tháng và năm. VD: 2/2020 và 10/2020-->
+<!--Tính số ngày giữa 2 giá trị tháng năm này.-->
+<div>
+    <p>Nhập vào tháng bắt đầu:</p>
+    <input type="text" id="m1">
+    <br>
+    <p>Nhập vào năm bắt đầu</p>
+    <input type="text" id="y1">
+    <br>
+    <br>
+    <p>Nhập vào tháng kết thúc:</p>
+    <input type="text" id="m2">
+    <br>
+    <p>Nhập vào năm kết thúc</p>
+    <input type="text" id="y2">
+    <br>
+    <br>
+    <button type="button" onclick="checkYearBetween()">Tổng số ngày</button>
+        <br>
+    <br>
+    <div id ="sum"></div>
+</div>
+<script>
+    function tinhNgay(month, year) {
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: return 31;
+            case 4:
+            case 6:
+            case 9:
+            case 11: return 30;
+            case 2: if (checkLeapYear(year))
+                return 29;
+            else
+                return 28;
+            default: return  "Không phải là tháng"
+        }
+    }
+
+    function checkLeapYear(year) {
+        return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+    }
+
+    // function checkDateBetween() {
+    //     let monthStart = document.getElementById("m1").value;
+    //     monthStart = parseInt(monthStart);
+    //     let monthEnd = document.getElementById("m2").value;
+    //     monthEnd = parseInt(monthEnd);
+    //     let yearEnd = document.getElementById("y2").value;
+    //     yearEnd = Number.parseInt(yearEnd);
+    //
+    //     let i, sum = 0;
+    //     for (i = monthStart; i <= monthEnd; i++)
+    //         sum += tinhNgay(i, yearEnd);
+    //     document.getElementById("sum").innerHTML = "" + sum;
+    // }
+
+    function checkDateBetween() {
+        let monthStart = document.getElementById("m1").value;
+        monthStart = parseInt(monthStart);
+        let yearStart = document.getElementById("y1").value;
+        yearStart = Number.parseInt(yearStart);
+        let monthEnd = document.getElementById("m2").value;
+        monthEnd = parseInt(monthEnd);
+        let yearEnd = document.getElementById("y2").value;
+        yearEnd = Number.parseInt(yearEnd);
+
+        let i, sum = 0;
+        for (i = monthStart; i <= monthEnd; i++)
+            sum += tinhNgay(i, yearEnd);
+
+    }
+
+    function checkYearBetween() {
+        let yearStart = document.getElementById("y1").value;
+        yearStart = Number.parseInt(yearStart);
+        let yearEnd = document.getElementById("y2").value;
+        yearEnd = Number.parseInt(yearEnd);
+        let j, sumTotal = 0;
+        for (j = yearStart; j <= yearEnd; j++)
+            sumTotal += checkDateBetween() + j;
+        document.getElementById("sum").innerHTML = "" + sumTotal;
+    }
+</script>
+</body>
+</html>
