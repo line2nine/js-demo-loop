@@ -15,7 +15,7 @@ function countPrimeNumber() {
     let result = "";
     while (count < num) {
         if (checkIfPrimeNumber(n)) {
-            result += n + ",";
+            result += n + " ";
             count++;
         }
         n++;
