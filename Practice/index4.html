@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good-Fast-Cheap</title>
+    <style>
+        div {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input type="checkbox" name="tick" id="check1" onclick="checkThisBox(this)"> Dog
+</div>
+<div>
+    <input type="checkbox" name="tick" id="check2" onclick="checkThisBox(this)"> Cat
+</div>
+<div>
+    <input type="checkbox" name="tick" id="check3" onclick="checkThisBox(this)"> Monkey
+</div>
+<script>
+    function checkThisBox(ckb) {
+        let check = document.getElementsByName(ckb.name);
+        for (let i = 0; i < check.length; i++){
+            check.checked = false;
+            if (ckb.checked) {
+                check.checked = true;
+            }
+        }
+    }
+</script>
+</body>
+</html>

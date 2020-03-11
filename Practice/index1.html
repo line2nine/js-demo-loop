@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Nhập số:
+<input type="text" id="inputNumber" onkeyup="calSum()"></p>
+<br>
+<span id="sum">Tổng là: </span>
+<script>
+    function calSum() {
+        let num = document.getElementById("inputNumber").value;
+        let sum = 0;
+        for (let i = 1; i <= num; i++)
+            sum += i;
+            document.getElementById("sum").innerHTML = "" + sum;
+    }
+</script>
+</body>
+</html>

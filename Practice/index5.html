@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<body>
+<div>
+    <p>Nhập a:</p>
+    <input type="text" id="a" onkeyup="calDiv()">
+    <br>
+    <p>Nhập b</p>
+    <input type="text" id="b" onkeyup="calDiv()">
+    <br>
+    <p>Kết quả:</p>
+    <span id ="div">0</span>
+</div>
+
+<script>
+    function calDiv() {
+        let a = Number.parseInt(document.getElementById("a").value);
+        let b = Number.parseInt(document.getElementById("b").value);
+        if (a % b === 0){
+            document.getElementById("div").innerHTML = a + " có chia hết cho " + b;
+        } else document.getElementById("div").innerHTML = a + " không thể chia hết cho " + b;
+    }
+</script>
+</body>
+</html>

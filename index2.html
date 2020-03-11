@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Vừa gà vừa chó
+    //Bó lại cho tròn
+    //Ba mươi sáu con
+    //Một trăm chân chẵn
+    //Gọi số gà là x
+    //Gọi số chó là y
+    //Ta có hệ: x + y + 36 ==> 0 <== x, y <== 36
+    //2*x + 4*y = 100
+    //BTVN:
+    //Trăm trâu trăm cỏ
+    //Cỏ bỏ trâu ăn
+    //Trâu đứng ăn năm
+    //Trâu nằm ăn ba
+    //Trâu già ba con một bó
+    //Tính số trâu mỗi loại
+    let  soGa, soCho;
+    for (soGa = 0; soGa <= 36; soGa++)
+        for (soCho = 0; soCho <= 36; soCho++)
+            if (soGa + soCho === 36 && 2*soGa + 4*soCho === 100) {
+                console.log("Số gà: " + soGa);
+                console.log("Số chó: " + soCho);
+            }
+</script>
+</body>
+</html>
